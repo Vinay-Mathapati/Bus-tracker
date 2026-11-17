@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "buses":   { ".read": true, ".write": false },
+    "drivers": { "$uid": { ".read": "auth != null && auth.uid === $uid", ".write": false } },
+    "live": {
+      "$busId": {
+        ".read": true,
+        ".write": "auth != null && root.child('drivers').child(auth.uid).child('buses').child($busId).val() === true",
+        ".validate": "newData.hasChildren(['lat','lng','status','ts'])",
+        "lat":    { ".validate": "newData.isNumber() && newData.val() >= -90  && newData.val() <= 90" },
+        "lng":    { ".validate": "newData.isNumber() && newData.val() >= -180 && newData.val() <= 180" },
+        "status": { ".validate": "newData.isString() && (newData.val() === 'active' || newData.val() === 'ended' || newData.val() === 'offline')" }
+      }
+    }
+  }
+}

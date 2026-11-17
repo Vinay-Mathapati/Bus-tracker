@@ -1,0 +1,17 @@
+{
+  "buses": {
+    "bus1": {
+      "name": "Bus 1 – North route",
+      "destination": { "name": "College main gate", "lat": 12.9716, "lng": 77.5946 },
+      "radius": 100
+    },
+    "bus2": {
+      "name": "Bus 2 – South route",
+      "destination": { "name": "College main gate", "lat": 12.9716, "lng": 77.5946 },
+      "radius": 100
+    }
+  },
+  "drivers": {
+    "PASTE_DRIVER_UID_HERE": { "buses": { "bus1": true } }
+  }
+}

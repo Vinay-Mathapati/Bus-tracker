@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track a bus</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="wrap">
+  <h1>Track a bus</h1>
+  <label for="busSelect">Choose your bus</label>
+  <select id="busSelect"><option value="">Loading buses…</option></select>
+
+  <div class="card" style="margin-top:16px">
+    <span id="status" class="chip">Select a bus</span>
+    <div class="stats">
+      <div><b id="eta">—</b><small>estimated arrival</small></div>
+      <div><b id="distance">—</b><small>from destination</small></div>
+    </div>
+    <small id="updated"></small>
+  </div>
+
+  <div id="map" role="img" aria-label="Live map showing the bus location"></div>
+  <p id="msg" class="msg" role="alert"></p>
+</main>
+<script type="module" src="student.js"></script>
+</body>
+</html>

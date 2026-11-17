@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driver · Bus Tracker</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="wrap">
+  <h1>Driver</h1>
+
+  <section id="login" class="card">
+    <h2>Sign in</h2>
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="username">
+    <label for="password">Password</label>
+    <input id="password" type="password" autocomplete="current-password">
+    <button id="loginBtn">Sign in</button>
+    <p id="loginMsg" class="msg" role="alert"></p>
+  </section>
+
+  <section id="panel" class="card hidden">
+    <h2>Your trip</h2>
+    <label for="busSelect">Bus</label>
+    <select id="busSelect"></select>
+    <p>Status: <span id="status" class="chip">Not started</span></p>
+    <div class="stats">
+      <div><b id="distance">—</b><small>to destination</small></div>
+      <div><b id="speed">—</b><small>speed</small></div>
+    </div>
+    <button id="startBtn">Start trip</button>
+    <button id="stopBtn" class="stop hidden">End trip</button>
+    <button id="logoutBtn" class="secondary">Sign out</button>
+    <p id="tripMsg" class="msg" role="alert"></p>
+    <small>Keep this page open and the screen on while driving.</small>
+  </section>
+</main>
+<script type="module" src="driver.js"></script>
+</body>
+</html>
