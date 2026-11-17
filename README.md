@@ -22,6 +22,12 @@
    - Local: `npx serve .` (or `python3 -m http.server 8000`) → http://localhost:8000
    - Deploy: `npm i -g firebase-tools && firebase login && firebase init hosting && firebase deploy`
 
+## Android App (.apk)
+An Android project is included in `/android`.
+- **Automatic GitHub Build**: Every push to `main` automatically builds `BusTracker.apk` via GitHub Actions.
+- **Download APK**: Go to the **Actions** tab or **Releases** on your GitHub repository to download `BusTracker.apk` directly to your phone.
+- **Android Studio**: Open the `android/` folder in Android Studio and run/build directly. Location permissions are pre-configured.
+
 ## How it works
 Driver phone → `watchPosition` → writes `/live/{busId}` every 3 s →
 students subscribe with `onValue` → marker moves instantly.

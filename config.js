@@ -9,4 +9,4 @@ export const firebaseConfig = {
 
 // 2) Google Cloud console → enable "Maps JavaScript API" → create a key
 //    Restrict it to your site's domain (HTTP referrers).
-export const GOOGLE_MAPS_API_KEY = "YOUR_GOOGLE_MAPS_API_KEY";
+export const GOOGLE_MAPS_API_KEY = "AIzaSyB2r2UV22lTVIIJWiPdHMRpxH8nHN1n31Y";

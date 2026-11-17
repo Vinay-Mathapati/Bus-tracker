@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.vinay.bustracker'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.vinay.bustracker"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.webkit:webkit:1.10.0'
+    implementation 'androidx.core:core:1.12.0'
+}
+
+tasks.register('copyWebAssets', Copy) {
+    from project.rootDir.parentFile
+    into "${projectDir}/src/main/assets"
+    include 'index.html', 'driver.html', 'driver.js', 'student.html', 'student.js', 'shared.js', 'style.css', 'config.js'
+}
+
+preBuild.dependsOn copyWebAssets
